@@ -1,0 +1,248 @@
+/* ===== VARIABEL WARNA (ubah di sini, semua ikut berubah) ===== */
+:root {
+  --navy: #12263F;
+  --amber: #F2B24A;
+  --bg: #F5F6F2;
+  --muted: #4A5568;
+  --soft: #D5DEEA;
+}
+
+/* ===== DASAR ===== */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--navy);
+}
+
+/* Supaya section tidak ketutup navbar saat diklik dari menu */
+section { scroll-margin-top: 72px; }
+
+/* ===== UTILITAS WARNA ===== */
+.bg-navy   { background: var(--navy); }
+.text-amber { color: var(--amber); }
+.text-soft  { color: var(--soft); }
+.text-muted { color: var(--muted) !important; }
+.link-navy  { color: var(--navy); }
+
+/* ===== NAVBAR ===== */
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--amber);
+  display: inline-block;
+}
+
+.navbar .nav-link { font-weight: 500; }
+
+/* ===== TOMBOL ===== */
+.btn-amber {
+  background: var(--amber);
+  color: var(--navy);
+  font-weight: 700;
+  border: 0;
+  border-radius: 10px;
+}
+.btn-amber:hover,
+.btn-amber:focus-visible {
+  background: #e6a43a;
+  color: var(--navy);
+}
+
+.btn-outline-light { border-width: 2px; border-radius: 10px; font-weight: 700; }
+
+/* ===== HERO ===== */
+.hero { padding-bottom: 4rem; }
+
+.ticket-card {
+  background: #fff;
+  color: var(--navy);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.progress-steps { display: flex; gap: 6px; }
+.progress-steps span {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: #D9DEE5;
+}
+.progress-steps span.done { background: var(--navy); }
+
+/* ===== STATUS (CHIP) ===== */
+.chip {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.chip-proses  { background: #FCE7BF; color: #7A4B00; }
+.chip-terima  { background: #DCE7F7; color: #1E3A66; }
+.chip-selesai { background: #D6EFE0; color: #14532D; }
+
+/* ===== SECTION UMUM ===== */
+.section { padding: 80px 0 40px; }
+.section-title { font-size: 2.25rem; font-weight: 800; margin-bottom: .75rem; }
+.section-desc  { color: var(--muted); font-size: 1.1rem; max-width: 620px; margin-bottom: 2.25rem; }
+
+/* ===== KARTU LAYANAN ===== */
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+}
+.service-card h3 { font-size: 1.2rem; font-weight: 700; margin: 16px 0 8px; }
+.service-card p  { color: var(--muted); margin: 0; line-height: 1.6; }
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: var(--amber);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== KARTU LAPORAN ===== */
+.report-card {
+  background: #fff;
+  border: 1px solid #E3E6E0;
+  border-radius: 16px;
+  padding: 24px;
+}
+.report-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+.report-card p  { color: var(--muted); line-height: 1.6; }
+
+/* ===== FAQ ===== */
+.faq-wrap { max-width: 800px; }
+
+.accordion-button { font-weight: 700; color: var(--navy); }
+.accordion-button:not(.collapsed) {
+  background: #fff;
+  color: var(--navy);
+  box-shadow: none;
+}
+.accordion-body { color: var(--muted); line-height: 1.6; }
+
+/* ===== FOOTER ===== */
+footer { margin-top: 40px; }
+
+
+/* ===== JARAK ANTAR SECTION (beranda) ===== */
+#layanan, #terbaru, #faq { padding: 88px 0; }
+#layanan .section-desc { margin-bottom: 3rem; }
+footer { margin-top: 0; }
+
+/* ===== ANIMASI SCROLL (masuk & keluar) ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal.out-up:not(.in-view) { transform: translateY(-40px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== HOVER: KARTU LAYANAN ===== */
+.service-card {
+  position: relative;
+  border: 1px solid transparent;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 32px rgba(18, 38, 63, .14);
+  border-color: var(--amber);
+}
+.service-card .icon-box { transition: background .25s ease, color .25s ease, transform .25s ease; }
+.service-card:hover .icon-box {
+  background: var(--amber);
+  color: var(--navy);
+  transform: scale(1.1) rotate(-6deg);
+}
+
+/* ===== HOVER: KARTU LAPORAN ===== */
+.report-card {
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.report-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(18, 38, 63, .14);
+  border-color: var(--amber);
+}
+.report-card h3 { transition: color .2s ease; }
+.report-card:hover h3 { color: #8a5a00; }
+
+/* link "Lihat semua laporan" */
+.link-navy { text-decoration: none; transition: color .2s ease; }
+.link-navy::after { content: " \2192"; display: inline-block; transition: transform .2s ease; }
+.link-navy:hover { color: #8a5a00; text-decoration: underline; }
+.link-navy:hover::after { transform: translateX(5px); }
+
+/* ===== FAQ: kartu terpisah + hover ===== */
+#faqList .accordion-item {
+  border: 1px solid #E3E6E0;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+#faqList .accordion-item.reveal {
+  transition: opacity .7s ease, transform .7s ease, box-shadow .25s ease, border-color .25s ease;
+}
+#faqList .accordion-item:hover {
+  border-color: var(--amber);
+  box-shadow: 0 8px 22px rgba(18, 38, 63, .10);
+}
+#faqList .accordion-button { padding: 18px 22px; transition: background .2s ease, padding-left .2s ease; }
+#faqList .accordion-button:hover { background: #FFF8E8; padding-left: 28px; }
+#faqList .accordion-button:focus { box-shadow: 0 0 0 3px rgba(242, 178, 74, .45); }
+
+
+/* ===== TRANSISI ANTAR HALAMAN (dipakai bersama transisi.js) =====
+   Navbar tetap diam; isi halaman (hero, section, main, footer) yang bergeser. */
+@keyframes halaman-masuk-kanan { from { opacity: 0; transform: translateX(60px); }  to { opacity: 1; transform: none; } }
+@keyframes halaman-masuk-kiri  { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: none; } }
+@keyframes halaman-masuk-fade  { from { opacity: 0; transform: translateY(16px); }  to { opacity: 1; transform: none; } }
+@keyframes halaman-keluar-kiri  { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateX(-60px); } }
+@keyframes halaman-keluar-kanan { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateX(60px); } }
+@keyframes garis-muat { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* masuk */
+html.enter-next body > *:not(nav):not(script) { animation: halaman-masuk-kanan .5s cubic-bezier(.22, .8, .3, 1) backwards; }
+html.enter-prev body > *:not(nav):not(script) { animation: halaman-masuk-kiri  .5s cubic-bezier(.22, .8, .3, 1) backwards; }
+html.enter-fade body > *:not(nav):not(script) { animation: halaman-masuk-fade  .5s cubic-bezier(.22, .8, .3, 1) backwards; }
+
+/* keluar */
+html.leave-next body > *:not(nav):not(script) { animation: halaman-keluar-kiri  .32s ease-in forwards; }
+html.leave-prev body > *:not(nav):not(script) { animation: halaman-keluar-kanan .32s ease-in forwards; }
+
+/* cegah scrollbar horizontal muncul selama geser */
+html.enter-next, html.enter-prev, html.leave-next, html.leave-prev { overflow-x: hidden; }
+
+/* garis amber tipis di atas layar saat pindah halaman */
+html.leave-next::before,
+html.leave-prev::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--amber);
+  transform-origin: left;
+  z-index: 2000;
+  animation: garis-muat .32s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[class*="enter-"] body > *,
+  html[class*="leave-"] body > * { animation: none !important; }
+}

@@ -1,0 +1,190 @@
+/* ===== VARIABEL WARNA (ubah di sini, semua ikut berubah) ===== */
+:root {
+  --navy: #12263F;
+  --amber: #F2B24A;
+  --bg: #F5F6F2;
+  --muted: #4A5568;
+  --soft: #D5DEEA;
+}
+
+/* ===== DASAR ===== */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--navy);
+}
+
+/* Supaya section tidak ketutup navbar saat diklik dari menu */
+section { scroll-margin-top: 72px; }
+
+/* ===== UTILITAS WARNA ===== */
+.bg-navy   { background: var(--navy); }
+.text-amber { color: var(--amber); }
+.text-soft  { color: var(--soft); }
+.text-muted { color: var(--muted) !important; }
+.link-navy  { color: var(--navy); }
+
+/* ===== NAVBAR ===== */
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--amber);
+  display: inline-block;
+}
+
+.navbar .nav-link { font-weight: 500; }
+
+/* ===== TOMBOL ===== */
+.btn-amber {
+  background: var(--amber);
+  color: var(--navy);
+  font-weight: 700;
+  border: 0;
+  border-radius: 10px;
+}
+.btn-amber:hover,
+.btn-amber:focus-visible {
+  background: #e6a43a;
+  color: var(--navy);
+}
+
+.btn-outline-light { border-width: 2px; border-radius: 10px; font-weight: 700; }
+
+/* ===== HERO ===== */
+.hero { padding-bottom: 4rem; }
+
+.ticket-card {
+  background: #fff;
+  color: var(--navy);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.progress-steps { display: flex; gap: 6px; }
+.progress-steps span {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: #D9DEE5;
+}
+.progress-steps span.done { background: var(--navy); }
+
+/* ===== STATUS (CHIP) ===== */
+.chip {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.chip-proses  { background: #FCE7BF; color: #7A4B00; }
+.chip-terima  { background: #DCE7F7; color: #1E3A66; }
+.chip-selesai { background: #D6EFE0; color: #14532D; }
+
+/* ===== SECTION UMUM ===== */
+.section { padding: 80px 0 40px; }
+.section-title { font-size: 2.25rem; font-weight: 800; margin-bottom: .75rem; }
+.section-desc  { color: var(--muted); font-size: 1.1rem; max-width: 620px; margin-bottom: 2.25rem; }
+
+/* ===== KARTU LAYANAN ===== */
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+}
+.service-card h3 { font-size: 1.2rem; font-weight: 700; margin: 16px 0 8px; }
+.service-card p  { color: var(--muted); margin: 0; line-height: 1.6; }
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: var(--amber);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== KARTU LAPORAN ===== */
+.report-card {
+  background: #fff;
+  border: 1px solid #E3E6E0;
+  border-radius: 16px;
+  padding: 24px;
+}
+.report-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+.report-card p  { color: var(--muted); line-height: 1.6; }
+
+/* ===== FAQ ===== */
+.faq-wrap { max-width: 800px; }
+
+.accordion-button { font-weight: 700; color: var(--navy); }
+.accordion-button:not(.collapsed) {
+  background: #fff;
+  color: var(--navy);
+  box-shadow: none;
+}
+.accordion-body { color: var(--muted); line-height: 1.6; }
+
+/* ===== FOOTER ===== */
+footer { margin-top: 40px; }
+/* ===== HALAMAN LAPORAN ===== */
+.page-header { padding: 56px 0 48px; }
+.page-header h1 { font-size: 2.5rem; font-weight: 800; }
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #E3E6E0;
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+.stat-card .stat-num { font-size: 2rem; font-weight: 800; line-height: 1; }
+.stat-card .stat-label { color: var(--muted); font-size: .9rem; margin: 6px 0 0; }
+
+.filter-btn {
+  background: #fff;
+  color: var(--navy);
+  border: 1px solid #D5DAD0;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: 700;
+  font-size: .9rem;
+}
+.filter-btn:hover { border-color: var(--navy); }
+.filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+.form-select.filter-select { border-radius: 10px; font-weight: 500; border-color: #D5DAD0; }
+
+.report-card .ticket-no { font-size: .8rem; font-weight: 700; color: var(--muted); }
+.report-card .meta { font-size: .85rem; color: var(--muted); }
+
+/* ===== KARTU LAPORAN (gaya tiket) ===== */
+#daftarLaporan .report-card {
+  border: 0;
+  box-shadow: 0 2px 12px rgba(18, 38, 63, .08);
+  transition: transform .2s ease, box-shadow .2s ease;
+  display: flex;
+  flex-direction: column;
+}
+#daftarLaporan .report-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(18, 38, 63, .15);
+}
+#daftarLaporan .report-card .border-top { margin-top: auto !important; }
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--amber);
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
